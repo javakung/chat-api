@@ -1,0 +1,9 @@
+version: '2.0'
+services:
+  chat-api:
+    image: chat-api
+    ports:
+      - 8000:8000
+
+
+

@@ -1,0 +1,10 @@
+requests
+uvicorn
+beautifulsoup4
+fastapi
+python-multipart
+pytz
+pandas
+pymongo==3.11.0
+haversine
+python-dotenv
