@@ -40,29 +40,36 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.post("/conversation",tags=["Conversation Unit"])
-def create_conversation(conversation_unit: ConversationUnit):
+@app.post("/conversation/unit",tags=["Conversation Unit"])
+def create_conversation_unit(conversation_unit: ConversationUnit):
     res = {
         "status": "success",
     }
     return res   
 
-@app.get("/conversation",tags=["Conversation Unit"])
-def get_conversation(cid: str):
+@app.get("/conversation/unit",tags=["Conversation Unit"])
+def get_conversation_unit(cid: str):
     return {"Hello": "World"}
 
-@app.put("/conversation",tags=["Conversation Unit"])
-def update_conversation(conversation_unit: ConversationUnit):
+@app.put("/conversation/unit",tags=["Conversation Unit"])
+def update_conversation_unit(conversation_unit: ConversationUnit):
     res = {
         "status": "success",
     }
     return res 
 
-@app.delete("/conversation",tags=["Conversation Unit"])
-def delete_conversation(cid:str=""):
+@app.delete("/conversation/unit",tags=["Conversation Unit"])
+def delete_conversation_unit(cid:str=""):
     res = {
         "status": "success",
     }
+    return res   
+
+
+@app.get("/conversation/list",tags=["Conversation Unit"])
+def get_conversation_unit_list():
+    res = []
+
     return res   
 
 
@@ -93,6 +100,11 @@ def delete_service(sid:str=""):
         "status": "success",
     }
     return res  
+
+@app.get("/service/list",tags=["Service"])
+def get_service_list():
+    res = []
+    return res
 
 
 @app.get("/chat",tags=["Chat"],response_model=outgoing_message)
