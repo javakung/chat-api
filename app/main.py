@@ -4,19 +4,20 @@ from pydantic import BaseModel
 
 class ConversationUnit(BaseModel):
     text: str
-    intent: str
-    entities: list
-    confidence: float
-    response: str
-    context: dict
+    tag: str
+    incoming_message: list
+    outgoing_message: list
+    created_at: str
 
 
 class Service(BaseModel):
     name: str
     description: str
     version: str
-    url: str
-    status: str
+    endpoint: str
+    media_type: str
+    parameter: list
+    created_at: str
 
 class incoming_message(BaseModel):
     session_id: str
